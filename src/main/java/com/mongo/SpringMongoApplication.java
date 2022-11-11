@@ -9,5 +9,4 @@ public class SpringMongoApplication {
 		SpringApplication.run(SpringMongoApplication.class, args);
 		//1st commit
 	}
-
 }
