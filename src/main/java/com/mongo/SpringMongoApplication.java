@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpringMongoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringMongoApplication.class, args);
+		//1st commit
 	}
 
 }
