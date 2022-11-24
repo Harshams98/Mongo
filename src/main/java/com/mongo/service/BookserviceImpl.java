@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.mongo.model.Book;
 import com.mongo.repo.BookRepository;
+import org.springframework.web.servlet.view.RedirectView;
 
 @Service
 public class BookserviceImpl implements Bookservice{
@@ -37,9 +38,10 @@ public class BookserviceImpl implements Bookservice{
 	@Override
 	public Book getById(int bookno) {
 		Optional<Book> bookcode = bookRepository.findById(bookno);
+		return (bookRepository.findById(bookno).orElseThrow(() ->
+				new com.mongo.exception.ResourceNotFoundException("Book-Strore", "Book number", bookcode)));
+			 // USING LAMBDA
 
-		return (bookRepository.findById(bookno).orElseThrow(() -> // USING LAMBDA
-		new com.mongo.exception.ResourceNotFoundException("Book-Strore", "Book number", bookcode)));
 	}
 
 	@Override

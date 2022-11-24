@@ -59,6 +59,8 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>springboot-mongodb-docker</finalName>
 	</build>
+
 
 </project>
